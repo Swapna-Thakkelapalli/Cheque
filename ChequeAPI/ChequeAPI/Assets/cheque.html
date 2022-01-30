@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+    #main {
+        background-color: #CCCCFF;
+        padding: 5px 10px;
+        display: flex;
+    }
+
+h1 {
+ margin: 0px;
+}
+
+#tag {
+ margin-top: -1px;
+}
+
+#bottomTag {
+ margin-top: -5px;
+ font-size: 12px;
+}
+
+#bottomText {
+ font-size: 12px;
+}
+
+#col1 {
+ flex: 75%;
+ max-width:75%;
+ min-width:75%;
+ margin-right:5px;
+}
+
+#col2 {
+ flex: 25%;
+ max-width:25%;
+ min-width:25%;
+ text-align: end;
+}
+
+#date {
+ border-bottom: 1px solid black;
+ font-size: larger;
+}
+
+#amount {
+ background-color: white;
+ text-align: center;
+ padding: 6px 0px;
+ font-size: larger;
+ margin-bottom: 6px;
+ word-break: break-all;
+}
+
+#symbol {
+ float: left;
+}
+
+#signature {
+ text-align: center;
+ border-bottom: 1px solid black;
+ font-size: larger;
+}
+
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="col1">
+<img align="left" src="#ServerUrl#/pound symbol.png" alt="Logo" width="60px" height="70px"/>
+<h1 align="left">FIRST BANK<br/>OF WIKI</h1>
+<p id="tag"><b>SHEFFIELD CITY CENTRE BRANCH</b></p>
+<p style="word-break:break-all"><b>PAY _______<u>#PayeeName#</u>___________________________________________|</b></p>
+<p style="word-break:break-all"><b>__________<u>#AmountInWords# </u>_______________________________________|</b></p>
+<p id="bottomTag"><b>First Bank of Wiki Plc<br/>1234567</b></p><br/>
+<p id="bottomText"><b>Cheque No.&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Branch Sort Code&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Account No.</b> </p>
+<p><b>#000243#&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;||:060203||:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0623456789</b></p>
+</div>
+<div id="col2">
+<p><b>01 - 02 - 03</b></p>
+<p><b>DATE <span id="date">#Date#</span></b></p>
+<br/>
+<p id="amount"><span id="symbol">£</span><b>#Amount#</b></p>
+<p id="tag"><b>MR. JOHN JONES</b></p><br/>
+<p id="signature"><b>JOHN JONES</b></p>
+</div>
+</div>
+</body>
+</html

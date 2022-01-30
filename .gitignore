@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ChequeAPI/ChequeAPI/obj
+/ChequeUI/.angular/cache
+/ChequeAPI/ChequeAPI/bin
+/ChequeAPI/.vs/ChequeAPI/config
+/ChequeAPI/.vs/ChequeAPI/DesignTimeBuild
+/ChequeAPI/.vs/ChequeAPI/v16/.suo
+/ChequeAPI/ChequeAPI/.config/dotnet-tools.json

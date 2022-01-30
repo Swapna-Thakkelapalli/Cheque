@@ -1,0 +1,115 @@
+<div class="loading-indicator"  *ngIf="showSpinner">
+  <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner"></mat-progress-spinner>
+</div>
+<form  #f="ngForm" novalidate>
+  <mat-card class="form-container" >
+    <mat-card-header>
+      <mat-card-title>Cheque Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+  <mat-form-field  class="full-width" appearance="fill">
+    <input matInput class="form-control" placeholder="Payee Name" [(ngModel)]="cheque.PayeeName" name="payeeName" #payeeName="ngModel" required>
+  </mat-form-field><br />
+  <span class="text-danger"
+      *ngIf="(f.submitted) && payeeName.errors?.['required']">
+      Payee Name is required
+  </span>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+  <mat-form-field  class="full-width" appearance="fill">
+
+    <input matInput [(ngModel)]="cheque.Amount" placeholder="Amount"  name="amount" #amount="ngModel" required type="number" min="0" max="10000000000000">
+  </mat-form-field><br />
+  <span class="text-danger"
+      *ngIf="(f.submitted) && amount.errors?.['max']">
+      should be less than 10000000000000
+  </span>
+  <span class="text-danger"
+  *ngIf="(f.submitted) && amount.errors?.['min']">
+  should be grater than 0
+</span>
+<span class="text-danger"
+*ngIf="(f.submitted) && amount.errors?.['required']">
+Amount is required
+</span>
+</div>
+</div>
+<br />
+  <div class="row">
+    <div class="col-md-6">
+  <mat-form-field  class="full-width" appearance="fill">
+    <mat-select [(ngModel)]="cheque.Currency" placeholder="Currency"  name="currency" required #currency="ngModel">
+      <mat-option *ngFor="let currency of currencyList" [value]="currency">
+        {{currency}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br />
+  <span class="text-danger"
+  *ngIf="(f.submitted) && currency.errors?.['required']">
+  Currency is required
+  </span>
+  </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+<mat-form-field  class="full-width" appearance="fill">
+  <input matInput [matDatepicker]="picker"  placeholder="Choose a date" [min] = "minDate"  [(ngModel)]="cheque.InputDate" name="date" #date="ngModel"
+   required>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field><br />
+<span class="text-danger"
+  *ngIf="(f.submitted) && date.errors?.['required']">
+  Please choose date
+  </span>
+</div>
+</div>
+  <button mat-raised-button color="primary"  (click)="GenerateCheque(f)">Generate</button>
+  </mat-card-content>
+  </mat-card>
+</form>
+<!-- <form class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Cheque Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width">
+            <input matinput="" placeholder="First name">
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="full-width">
+            <input matinput="" placeholder="Last name">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+            <textarea matinput="" placeholder="Address"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 top-padding">
+              <mat-form-field class="full-width" appearance="fill">
+                  <mat-label>Select DOB</mat-label>
+                  &lt;input matInput [matDatepicker]="picker"&gt;
+                  &lt;mat-datepicker-toggle matSuffix [for]="picker"&gt;&lt;/mat-datepicker-toggle&gt;
+                  &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+              </mat-form-field>
+          </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button="" color="primary">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form> -->

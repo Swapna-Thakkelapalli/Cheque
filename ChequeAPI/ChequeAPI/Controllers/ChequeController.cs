@@ -3,6 +3,8 @@ using ChequeAPI.Services;
 
 using Microsoft.AspNetCore.Mvc;
 
+using System;
+
 namespace ChequeAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -30,6 +32,12 @@ namespace ChequeAPI.Controllers
                 return NotFound();
             }
             
+        }
+        [HttpGet]
+        [Route("Test")]
+        public string Test()
+        {
+            return DateTime.Now.ToString();
         }
     }
 }
